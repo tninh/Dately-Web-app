@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Dately</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	<link href="css/nivo-lightbox.css" rel="stylesheet" />
+	<link href="css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+	<link href="css/animate.css" rel="stylesheet" />
+    <!-- Squad theme CSS -->
+    <link href="css/style.css" rel="stylesheet">
+	<link href="color/default.css" rel="stylesheet">
+	
+
+					<!-- ==========JavaScript Includes======== -->
+	<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+	<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+	<script type="text/javascript" src="js/models/YelpApiCall.js"></script>
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+	<script src="http://code.jquery.com/ui/1.9.0/jquery-ui.js"></script>
+	<script src="js/bootstrap/js/bootstrap.js"></script>
+	<script src="js/chosen/chosen.jquery.js"></script>
+	<script src="js/controllers/model.js"></script>
+	
+	<script src="js/views/view-init.js"></script><!-- Initialize javascript functions in view -->	
+	<script type="text/javascript" src="js/views/search-view.js"></script>
+	<script src="js/utilities/isotope.js"></script><!-- plugin for animating and sorting items, see http://isotope.metafizzy.co/ for more details -->
+	<script src="js/utilities/jquery.raty.js"></script><!-- Star ratings -->
+		
+	
+
+	<script type="text/javascript" src="js/redirect.js"></script>
+	<script tyoe="test/JavaScript" src="js2/yelpView.js"></script>
+	
+
+	
+
+	<title>Yelp OAuth Example</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+		<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/oauth.js"></script>
+		<script type="text/javascript" src="http://oauth.googlecode.com/svn/code/javascript/sha1.js"></script>
+		
+		
+</head>
+
+<body data-spy="scroll">
+
+<div class="container">
+			<ul id="gn-menu" class="gn-menu-main">
+				<li class="gn-trigger">
+					<a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+					<nav class="gn-menu-wrapper">
+						<div class="gn-scroller">
+							<ul class="gn-menu">
+								<li class="gn-search-item">
+									<a href="#top" class="gn-icon gn-icon-cog">Login</a>
+								</li>
+								<li class="gn-search-item">
+									<a href="#top" class="gn-icon gn-icon-earth">Home</a>
+								</li>
+
+								<li><a href="#service" class="gn-icon gn-icon-article">Generator</a></li>
+								<li>
+									<a href="#about" class="gn-icon gn-icon-download">About</a>
+								</li>
+								<li>
+									<a href="#contact" class="gn-icon gn-icon-archive">Contact</a>
+								</li>
+							</ul>
+						</div><!-- /gn-scroller -->
+					</nav>
+				</li>
+				<li><a href="index.html">Perfect Date</a></li>
+				<li><ul class="company-social">
+                            <li class="social-facebook"><a href="#" target="_blank"><i class="fa fa-facebook"></i></a></li>
+                            <li class="social-twitter"><a href="#" target="_blank"><i class="fa fa-twitter"></i></a></li>
+                            <li class="social-dribble"><a href="#" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+                            <li class="social-google"><a href="#" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>	</li>
+			</ul>
+	</div>
+
+	<!-- Section: intro -->
+
+		<section id = "top" class="content-section video-section">
+		  <div class="pattern-overlay">
+		  <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=ti_pa_wkEE8',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+		<div class="slogan">
+			
+			<h1>Perfect Date</h1>
+			<h3>No plans? No problem.</h3>
+			<a href="php/demo.php" class="btn btn-skin scroll">Log In</a>
+			<a href="#service" class="btn btn-skin scroll">Try it out</a>
+			</div>	
+			  </div>
+			</section>
+	<!-- /Section: intro -->
+
+	<!-- Section: services -->
+    <section id="service" class="home-section text-center">
+		
+		<div class="heading-about marginbot-50">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+		
+					<div class="section-heading">
+					<h2>Generator your perfect date</h2>
+					<p>Surprise your date with a spontaneous restaurant and event near you! Click on the generate button below to try out our application!</p>
+					<button data-toggle="modal" data-target="#squarespaceModal" class="btn btn-skin center-block">Generate</button>
+					</div>
+			
+				</div>
+			</div>
+			</div>
+		</div>
+	</section>
+	<!-- /Section: services -->
+
+	<!-- line modal -->
+<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+	<div class="modal-content">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span></button>
+			<h3 class="modal-title" id="lineModalLabel">Perfect Date</h3>
+		</div>
+		<div class="modal-body" id="myModal">
+			
+            <!-- content goes here -->
+			<form id="search-form" action="">
+              
+                <label for="exampleInputEmail1">Search By Restaurant</label>
+                <input type="text" class="form-control" id="inputRestaurant" onsubmit="getData()" placeholder="Restaurant keyword" class="chzn-select">
+              
+              <div class="form-group">
+                <label for="exampleInputPassword1">Location</label>
+                <input type="text" class="form-control" id="inputEvent" placeholder="Event keyword">
+              </div>
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox"> Yelp
+                </label>
+              </div>
+              <form action="index2.html" method="post">
+              <button type="submit" class="btn btn-default" id="submitButton" onclick="window.open('http://localhost/Project2/CS174_FinalProject-master/results.html')">Submit</button>
+              </form>
+            </form>
+
+		</div>
+	</div>
+  </div>
+</div>
+
+
+<!--     <section id="service" class="home-section text-center">
+		
+		<div class="heading-about marginbot-50">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+		
+					<div class="section-heading">
+					<h2>What does your perfect day look like?</h2>
+					
+					</div>
+			
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+        <div class="row">
+        	
+        <div id="mask"></div>
+        <div id="fb-root"></div>
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '776607335720143',
+		      xfbml      : true,
+		      version    : 'v2.2'
+		    });
+		  };
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+		<noscript><h3>This website requires JavaScript.</h3></noscript>
+		<h3>featuring restaurants and reviews from <a href="http://www.yelp.com/" target="_blank"><img src="http://s3-media4.ak.yelpcdn.com/assets/2/www/img/7e704c57a423/developers/yelp_logo_75x38.png" width="75" height="38" id="yelpsite" alt="Yelp"></a></h3>
+
+
+
+		<div id="fullbody">
+			<div id= "body_left">
+				<h2>Where?</h2>
+				<div id="body_bottom">
+					<div id="locBoxDirections">To search for any restaurant nearby, press &lt;enter&gt; after you type in your location below:</div>
+					<br>
+					<form method="post" name="search1" id="search" onSubmit="return submitform(-1);">
+  					<input name="q" type="text" size="40" id="locationInput" placeholder="zip, address, etc." class="form-group"/>
+  					</form>
+  					<div id="noLocError" class="btn btn-skin scroll">First enter location above</div>
+  					<br>
+  					<div id="searchradiuscontainer">
+  						<h3>Max distance: <span id="radius-display"> 10 miles (driving) </span></h3>
+    					<div id="radius-slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all"><div class="ui-slider-range ui-widget-header ui-slider-range-min" style="width: 66.6667%;"></div><a class="ui-slider-handle ui-state-default ui-corner-all" href="#" style="left: 66.6667%;"></a></div>
+  					</div>
+				</div>
+			</div>
+			<div id="body_right">
+			<h2>What?</h2>
+				<div id="body_bottom">
+					<form method="post" action="restaurantselect.html" name="search3" id="search" onSubmit="return submitform(3);">
+					<a id="cheap" onClick="return submitform(1);" class="btn btn-skin scroll">cheap!</a>
+					<br><br>
+					<a id="expensive" onClick="return submitform(2);" class="btn btn-skin scroll">expensive!</a>
+					<br><br>
+					<h3>or..</h3>
+					<br>
+					<input name="selfentry" type="text" id="selfentry" size="60" placeholder="Name of the restaurant!" class="form-input"/>
+					<a onClick="return submitform(3);" id="goButton" class="btn btn-skin scroll">go!</a>
+					</form>
+					<div id="noSelfEntryError"></div>
+				</div>
+			</div>
+		</div>
+
+			
+          </div>
+        </div>		
+		</div>
+		<iframe name="oauth2relay721385588" id="oauth2relay721385588" src="https://accounts.google.com/o/oauth2/postmessageRelay?parent=http%3A%2F%2Fwww.restaurantgenerator.com#rpctoken=362434240&amp;forcesecure=1" tabindex="-1" style="width: 1px; height: 1px; position: absolute; top: -100px;">
+		#document
+		<html>
+		<head>
+			<title></title>
+			<meta http-equiv="content-type" content="text/html; charset=utf-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<script type="text/javascript" src="https://apis.google.com/js/api.js" gapi_processed="true"></script>
+			<script type="text/javascript" src="https://oauth.googleusercontent.com/gadgets/js/core:rpc:shindig.random:shindig.sha1.js?c=2"></script>
+			<script src="https://ssl.gstatic.com/accounts/o/3584451713-postmessagerelay.js"></script>
+		</head>
+		<body></body>
+		</html>
+	</iframe> -->
+	
+		<!-- Section: about -->
+    <section id="about" class="home-section text-center bg-gray">
+		<div class="heading-about marginbot-50">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+		
+					<div class="section-heading">
+					<h2>About Creative Coders</h2>
+					<p>We are a team of students passionate and interested in technology. Check out our profiles to learn more about our diverse backgrounds and talents!</p>
+					</div>
+			
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+        <div class="row">
+        <div class="home-doctors  clearfix">
+
+<!-- entry1 -->
+		<div class="col-lg-3 col-md-3 col-sm-6  text-center doc-item">
+			<div class="common-doctor animated fadeInUp clearfix ae-animation-fadeInUp">
+
+			<ul class="list-inline social-lists animate">
+				<li><a href="https://www.linkedin.com/in/kellyhuynh"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/kellyhuynh"><i class="fa fa-skype"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/kellyhuynh"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/kellyhuynh"><i class="fa fa-facebook"></i></a></li>
+			</ul>
+
+            <figure>
+                    <img width="670" height="500" src="img/team/1.jpg" class="doc-img animate attachment-gallery-post-single wp-post-image" alt="doctor-2"> 
+            </figure>
+
+            <div class="text-content">
+                <h5>Kelly Huynh</h5>
+                <!-- <div class="for-border"></div> -->
+                <h6>Front-End Developer</h6>
+            </div>
+        </div>
+    </div>
+
+<!-- entry2 -->
+    <div class="col-lg-3 col-md-3 col-sm-6  text-center doc-item">
+        <div class="common-doctor animated fadeInUp clearfix ae-animation-fadeInUp">
+
+            <ul class="list-inline social-lists animate">
+				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="#"><i class="fa fa-skype"></i></a></li>
+				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+			</ul>
+
+            <figure>
+                    <img width="670" height="500" src="img/team/3.jpg" class="doc-img animate attachment-gallery-post-single wp-post-image" alt="doctor-2"> 
+            </figure>
+
+            <div class="text-content">
+                <h5>Samanvitha Basole</h5>
+                <!-- <div class="for-border"></div> -->
+                <h6>PHP Developer</h6>
+            </div>
+        </div>
+    </div>
+
+	<!-- entry3 -->
+	<div class="col-lg-3 col-md-3 col-sm-6  text-center doc-item">
+	    <div class="common-doctor animated fadeInUp clearfix ae-animation-fadeInUp">
+
+	        <ul class="list-inline social-lists animate">
+				<li><a href="https://www.linkedin.com/in/aaronescoto"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/aaronescoto"><i class="fa fa-skype"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/aaronescoto"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/aaronescoto"><i class="fa fa-facebook"></i></a></li>
+			</ul>
+
+	        <figure>
+	                <img width="670" height="500" src="img/team/2.jpg" class="doc-img animate attachment-gallery-post-single wp-post-image" alt="doctor-2"> 
+	        </figure>
+
+	        <div class="text-content">
+	            <h5>Aaron Escoto</h5>
+	            <!-- <div class="for-border"></div> -->
+	            <h6>PHP Developer</h6>
+	        </div>
+	    </div>
+	</div>
+
+	<!-- entry4 -->
+	<div class="col-lg-3 col-md-3 col-sm-6  text-center doc-item">
+	    <div class="common-doctor animated fadeInUp clearfix ae-animation-fadeInUp">
+
+	        <ul class="list-inline social-lists animate">
+				<li><a href="https://www.linkedin.com/in/trininh"><i class="fa fa-linkedin"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/trininh"><i class="fa fa-skype"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/trininh"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="https://www.linkedin.com/in/trininh"><i class="fa fa-facebook"></i></a></li>
+			</ul>
+
+	        <figure>
+	                <img width="670" height="500" src="img/team/4.jpg" class="doc-img animate attachment-gallery-post-single wp-post-image" alt="doctor-2"> 
+	        </figure>
+
+	        <div class="text-content">
+	            <h5>Tri Ninh</h5>
+	            <!-- <div class="for-border"></div> -->
+	            <h6>PHP Developer</h6>
+	        </div>
+	    </div>
+	</div>
+		<!-- // -->
+	</div>
+	</div>
+	</div>
+					<!-- //The Team -->
+
+<!--             <div class="col-xs-6 col-sm-3 col-md-3">
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Kelly Huynh <img src="http://www.eaie.org/docroot/img/buttons/linkedin-button-color-small.png"></h5>
+                        <p class="subtitle">Designer</p> 
+                        <div class="avatar"><img src="img/team/1.jpg" alt="" class="img-responsive" /></div>
+                    </div>
+                </div>
+		
+            </div>
+			<div class="col-xs-6 col-sm-3 col-md-3">
+
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Aaron Escoto <img src="http://www.eaie.org/docroot/img/buttons/linkedin-button-color-small.png"></h5>
+                        <p class="subtitle">Developer</p>
+                        <div class="avatar"><img src="img/team/2.jpg" alt="" class="img-responsive" /></div>
+                    </div>
+				</div>
+
+
+            </div>
+			<div class="col-xs-6 col-sm-3 col-md-3">
+		
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Samanvitha Basole <img src="http://www.eaie.org/docroot/img/buttons/linkedin-button-color-small.png"></h5>
+                        <p class="subtitle">Developer</p>
+                        <div class="avatar"><img src="img/team/3.jpg" alt="" class="img-responsive" /></div>
+                    </div>
+                </div>
+		
+            </div>
+			<div class="col-xs-6 col-sm-3 col-md-3">
+		
+                <div class="team boxed-grey">
+                    <div class="inner">
+						<h5>Tri Ninh <img src="http://www.eaie.org/docroot/img/buttons/linkedin-button-color-small.png"></h5>
+                        <p class="subtitle">Developer</p>
+                        <div class="avatar"><img src="img/team/4.jpg" alt="" class="img-responsive" /></div>
+                    </div>
+                </div>
+            </div> -->
+
+
+        </div>		
+		</div>
+	</section>
+	<!-- /Section: about -->
+		
+
+	<!-- Section: contact -->
+    <section id="contact" class="home-section text-center">
+		<div class="heading-contact marginbot-50">
+			<div class="container">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+	
+					<div class="section-heading">
+					<h2>Send us your feedback!</h2>
+					<p>How can we improve on our application and better serve you? <br> Send us your feedback to us below! We'd love to hear from you!</p>
+					</div>
+				
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="container">
+
+    <div class="row">
+        <div class="col-lg-8 col-md-offset-2">
+            <div class="boxed-grey">
+                <form id="contact-form">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Name</label>
+                            <input type="text" class="form-control" id="name" placeholder="Enter full name" required="required" />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">
+                                Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                                </span>
+                                <input type="email" class="form-control" id="email" placeholder="Enter email" required="required" /></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">
+                                Subject</label>
+                            <select id="subject" name="subject" class="form-control" required="required">
+                                <option value="na" selected="">Choose One:</option>
+                                <option value="service">General Customer Service</option>
+                                <option value="suggestions">Suggestions</option>
+                                <option value="product">Product Support</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="name">
+                                Message</label>
+                            <textarea name="message" id="message" class="form-control" rows="9" cols="25" required="required"
+                                placeholder="Message"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-skin pull-right" id="btnContactUs">
+                            Send Message</button>
+                    </div>
+                </div>
+                </form>
+            </div>
+			
+			<div class="widget-contact row">
+				 <div class="col-lg-6">
+				<address>
+				  <strong>San Jose State University</strong><br>
+				  1 Washington Square<br>
+				  San Jose, CA 95192<br>
+				  <abbr title="Phone">P:</abbr> (408) 924-1000
+				</address>
+				</div>
+				
+				<div class="col-lg-6">
+				<address>
+				  <strong>Email</strong><br>
+				  <a href="mailto:#">email.name@example.com</a><br />
+				   <a href="mailto:#">name.name@example.com</a>
+				</address>	
+			
+				</div>
+			</div>	
+        </div>
+
+    </div>	
+
+		</div>
+	</section>
+	<!-- /Section: contact -->
+
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 col-lg-12">
+					<p>Copyright &copy; 2015 Creative Coders</p>
+				</div>
+			</div>	
+		</div>
+	</footer>
+
+    <!-- Core JavaScript Files -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.min.js"></script>	
+	<script src="js/classie.js"></script>
+	<script src="js/gnmenu.js"></script>
+	<script src="js/jquery.scrollTo.js"></script>
+	<script src="js/nivo-lightbox.min.js"></script>
+	<script src="js/stellar.js"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="js/custom.js"></script>
+    <script src="js/customVideo.js"></script>
+    <script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+
+</body>
+
+</html>
