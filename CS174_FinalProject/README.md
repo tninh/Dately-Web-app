@@ -1,5 +1,5 @@
 # CS174_FinalProject
 
-A perfect day application that plans your day for you!
+A perfect date application that suggests places and events for your date!
 
-Under construction... 
+
